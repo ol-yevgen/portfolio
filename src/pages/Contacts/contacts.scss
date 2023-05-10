@@ -1,0 +1,82 @@
+@import "../../styles/variable.scss";
+
+.contacts-visual {
+    position: relative;
+}
+
+.contacts {
+    position: relative;
+}
+
+.alert {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+
+    padding: 1.5rem 2rem;
+    border-radius: 6px;
+
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2rem;
+    color: $textColor;
+
+    &-sending {
+        background: $navLincColor;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -7px;
+            bottom: 0;
+            z-index: 5;
+
+            width: 0;
+            height: 0;
+
+            border-top: 2px solid transparent;
+            border-left: 10px solid $navLincColor;
+            border-bottom: 7px solid transparent;
+        }
+    }
+
+    &-required {
+        color: $extraColor;
+        background: $mainGreenColor;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -7px;
+            bottom: 0;
+            z-index: 5;
+
+            width: 0;
+            height: 0;
+
+            border-top: 2px solid transparent;
+            border-left: 10px solid $mainGreenColor;
+            border-bottom: 7px solid transparent;
+        }
+    }
+
+    &-notrequired {
+        background: $mainRedColor;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -7px;
+            bottom: 0;
+            z-index: 5;
+
+            width: 0;
+            height: 0;
+
+            border-top: 2px solid transparent;
+            border-left: 10px solid $mainRedColor;
+            border-bottom: 7px solid transparent;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+@import '../fonts/fonts.scss';
+@import './variable.scss';
+@import './animations.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Sofia Pro', sans-serif;
+    font-size: 1.6rem;
+
+    min-width: 320px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    color: $textColor;
+    background: $bgColor;
+}
+
+ul,
+li,
+dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h2 {
+    position: relative;
+
+    font-weight: 700;
+    font-size: 6.3rem;
+    line-height: 6.3rem;
+
+    color: $mainGreenColor;
+
+    &::before {
+        content: "<h2>";
+        position: absolute;
+        top: -4rem;
+        left: -2rem;
+
+        font-family: "La Belle Aurore", cursive;
+        font-size: 18px;
+
+        color: $tagsColor;
+    }
+
+    &::after {
+        content: "</h2>";
+        position: absolute;
+        bottom: -5rem;
+        left: -2rem;
+
+        font-family: "La Belle Aurore", cursive;
+        font-size: 18px;
+
+        color: $tagsColor;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+
+    transition: all 0.4s ease-in;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+main {
+    position: relative;
+    padding: 3rem;
+}
+
+::before,
+::after {
+    letter-spacing: normal;
+}
+
+
