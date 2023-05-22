@@ -2,6 +2,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import Nataliia from '../assets/myProjects/Nataliia.webp'
 import MyPortfolio from '../assets/myProjects/MyPortfolio.webp'
+import ImageCards from '../assets/myProjects/Image-cards.webp'
+import University from '../assets/myProjects/university.webp'
 import Tracker from '../assets/myProjects/Tracker.webp';
 import ToDo from '../assets/myProjects/ToDo.webp';
 import NataliaPortfolio from '../assets/myProjects/Natalia-portfolio.webp';
@@ -26,6 +28,24 @@ const projectsData = [
         gitHubLink: 'https://github.com/ol-yevgen/personal-portfolio',
         projectLink: 'https://personal-portfolio-ol-yevgen.vercel.app/',
         filter: 'landings'
+    },
+    {
+        id: uuidv4(),
+        title: 'Gallery',
+        image: ImageCards,
+        stack: 'ReactJS, Redux, JavaScript, SCSS',
+        gitHubLink: 'https://github.com/ol-yevgen/image-cards',
+        projectLink: 'https://image-cards.vercel.app/',
+        filter: 'apps'
+    },
+    {
+        id: uuidv4(),
+        title: 'University',
+        image: University,
+        stack: 'ReactJS, Redux, REST API, JavaScript, SCSS',
+        gitHubLink: 'https://github.com/ol-yevgen/universities-project',
+        projectLink: 'http://universities-project.vercel.app/',
+        filter: 'apps'
     },
     {
         id: uuidv4(),
