@@ -1,0 +1,66 @@
+@import "../../../app/styles/variables.scss";
+
+.btn {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 230px;
+
+    margin-top: 8.7rem;
+    padding: 1.5rem 0;
+
+    border: 1px solid $mainGreenColor;
+
+    font-weight: 300;
+    font-size: 1.7rem;
+    letter-spacing: 0.4rem;
+    color: $mainGreenColor;
+
+    transition: all 1.5s ease;
+
+    &:hover {
+        cursor: pointer;
+        color: $bgColor;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        width: 0;
+        height: 100%;
+        background: $mainGreenColor;
+        transition: all 1s ease;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+
+    &:focus {
+        outline: none;
+
+        color: $bgColor;
+
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .btn {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .btn {
+        width: 190px;
+    }
+}

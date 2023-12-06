@@ -1,0 +1,57 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("MONGO_URI")
+}
+
+model AboutPage {
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    aboutText  String[] @unique
+    aboutPhoto String?  @unique
+    createAt   DateTime @default(now())
+    updateAt   DateTime @updatedAt
+}
+
+model MyCV {
+    id       String   @id @default(auto()) @map("_id") @db.ObjectId
+    aboutCV  String?  @unique
+    createAt DateTime @default(now())
+    updateAt DateTime @updatedAt
+}
+
+model SkillsText {
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    skillsText String[] @unique
+    createAt   DateTime @default(now())
+    updateAt   DateTime @updatedAt
+}
+
+model SkillsIconsList {
+    id          String   @id @default(auto()) @map("_id") @db.ObjectId
+    skillsLabel String   @unique
+    skillsIcon  String   @unique
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+}
+
+model ProjectsList {
+    id            String   @id @default(auto()) @map("_id") @db.ObjectId
+    projectLabel  String   @unique
+    projectImage  String   @unique
+    projectStack  String
+    projectDemo   String   @unique
+    projectGit    String   @unique
+    projectFilter String   
+    createdAt     DateTime @default(now())
+    updatedAt     DateTime @updatedAt
+}
+
+model ContactsPage {
+    id           String   @id @default(auto()) @map("_id") @db.ObjectId
+    contactsText String[] @unique
+    createAt     DateTime @default(now())
+    updateAt     DateTime @updatedAt
+}

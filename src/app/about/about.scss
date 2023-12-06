@@ -1,0 +1,53 @@
+.about {
+    &-text {
+        min-height: 350px;
+        min-width: 100%;
+    }
+
+    &-photo {
+        width: auto;
+        height: 100%;
+        max-height: 538px;
+
+        &-photo--container {
+            display: flex;
+            justify-content: center;
+
+            opacity: 0;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .about {
+        &-btn {
+            margin: 0 auto;
+            margin-top: 8.7rem;
+        }
+
+        &-photo {
+            padding: 3rem 0;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .about {
+        &-btn {
+            margin: 0 auto;
+            margin-top: 8.7rem;
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .about {
+        &-btn {
+            margin: 0 auto;
+            margin-top: 8.7rem;
+        }
+        &-photo {
+            width: 80%;
+        }
+    }
+}

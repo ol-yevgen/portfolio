@@ -1,0 +1,166 @@
+@import "../../app/styles/variables.scss";
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 13rem;
+    height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    z-index: 3;
+
+    background: $navBgColor;
+
+    &-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 2rem 0;
+        background: #000;
+
+        &--wrapper {
+            width: 8.3rem;
+        }
+
+        &--icon {
+            width: 100%;
+        }
+
+        &--link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & > span {
+                margin-top: 1rem;
+                font-size: 1.8rem;
+                font-weight: 700;
+            }
+        }
+
+        &--text {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+
+            color: #a5a5a5;
+        }
+    }
+
+    &-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &--item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            padding: 2rem 0;
+
+            border-bottom: 1px solid $extraColor;
+            color: $navLincColor;
+
+            &::before {
+                content: "<";
+                position: absolute;
+                left: 2rem;
+
+                opacity: 0;
+            }
+
+            &::after {
+                content: "/>";
+                position: absolute;
+                right: 1.5rem;
+                opacity: 0;
+            }
+
+            &:first-child {
+                border-top: 1px solid $extraColor;
+            }
+
+            &:hover {
+                color: $mainGreenColor;
+
+                &::before {
+                    opacity: 1;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &-social {
+        display: flex;
+        justify-content: center;
+        
+        height: 20rem;
+        padding: 1.5rem 0;
+
+        & > li {
+            display: flex;
+            align-items: center;
+            height: 25px;
+
+            padding: 5px;
+        }
+    }
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    & > svg {
+        transition: all 0.3s ease-in;
+
+        & > path {
+            transition: all 0.3s ease-in;
+        }
+    }
+
+    &:hover svg > path {
+        fill: $mainGreenColor;
+    }
+
+    &:hover svg {
+        fill: $mainGreenColor;
+    }
+}
+
+@media (max-width: 1300px) {
+    .menu {
+        width: 100%;
+
+        left: -5%;
+
+        z-index: -1;
+        opacity: 0;
+
+        transition: all 0.4s ease-in 100ms;
+
+        &-open {
+            left: 0;
+            z-index: 10;
+            opacity: 1;
+        }
+
+        &-social {
+            gap: 20px;
+        }
+    }
+}
