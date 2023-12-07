@@ -1,20 +1,18 @@
 'use client'
 
-import { Formik, Form } from 'formik';
-import { v4 as uuidv4 } from 'uuid';
-import { validationSchema } from '@/helpers/validationSchema';
-
-import { successToast, errorToast, infoToast } from '@/libs/toast';
-
-import './form.scss'
-import { useEffect, useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
-import { IFormDataTypes } from '@/types/types';
-import { ToastContainer } from 'react-toastify';
-import Input from '../ui/Input/Input';
-import TextArea from '../ui/Input/TextArea';
 import MotionContainer from '../ui/MotionContainer/MotionContainer';
+import { successToast, errorToast, infoToast } from '@/libs/toast';
+import { validationSchema } from '@/helpers/validationSchema';
+import { useMutation } from '@tanstack/react-query';
+import { ToastContainer } from 'react-toastify';
+import { IFormDataTypes } from '@/types/types';
+import { useEffect, useState } from 'react';
+import TextArea from '../ui/Input/TextArea';
+import { Formik, Form } from 'formik';
+import Input from '../ui/Input/Input';
+import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
+import './form.scss'
 
 const cleanForm = (values: IFormDataTypes) => {
     const cleanName = values.name = '';
@@ -150,7 +148,7 @@ const ContactsForm = () => {
                         </MotionContainer >
                     </div>
 
-                    <div className='form-item--half'>
+                    <div className='form-submit'>
                         <MotionContainer initial={{ y: 40 }} delay={4} duration={1} >
                             <button
                                 type="submit"

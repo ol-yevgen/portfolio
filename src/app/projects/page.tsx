@@ -1,18 +1,15 @@
 'use client'
-import { AnimatePresence, motion } from 'framer-motion';
 
+import MotionContainer from '@/components/ui/MotionContainer/MotionContainer';
 import ProjectsFilter from '../../components/ProjectsFilter/ProjectsFilter';
-import MyProject from '@/components/MyProject/MyProject';
 import { IProjectTypes, IProjectsReqTypes } from '@/types/types';
+import MyProject from '@/components/MyProject/MyProject';
+import Spinner from '@/components/ui/Spinner/Spinner';
 import { useQuery } from '@tanstack/react-query';
 import { BASE_API } from '@/helpers/constants';
+import { Fragment, useState } from 'react';
 import axios from 'axios';
-import Spinner from '@/components/ui/Spinner/Spinner';
-
 import './projects.scss'
-import { Fragment, useCallback, useEffect, useState } from 'react';
-import MotionContainer from '@/components/ui/MotionContainer/MotionContainer';
-import PageTransitionContainer from '@/components/ui/PageTransitionContainer/PageTransitionContainer';
 
 const MyProjects = () => {
     const [activeFilter, setActiveFilter] = useState('all')
@@ -33,23 +30,9 @@ const MyProjects = () => {
 
     const filteredProjects = activeFilter === 'all' ? projects : projects.filter(project => project.projectFilter === activeFilter)
 
-    const renderProjectsList = useCallback((arr: IProjectTypes[]) => {
-        if (isError) {
-            return <h4 className="projects-item--title">No any projects</h4>
-        }
-
-        return arr.map(({ id, ...props }, index) => {
-            return <Fragment key={id}>
-                <MotionContainer initial={{ y: 20 }} delay={index} duration={1} >
-                    <MyProject  {...props} isLoading={isLoading} />
-                </MotionContainer>
-            </Fragment>
-                        
-        })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [data?.projects])
-
-    const elements = renderProjectsList(filteredProjects as IProjectTypes[]) as JSX.Element[]
+    if (isError) {
+        return <h4 className="projects-item--title">No any projects</h4>
+    }
 
     if (isLoading) return <div className='projects-loading'>
         <Spinner
@@ -68,7 +51,14 @@ const MyProjects = () => {
                 setActiveFilter={setActiveFilter}
             />
             <ul className="projects-items">
-                {elements}
+                {filteredProjects.map(({ id, ...props }, index) => {
+                    return <Fragment key={id}>
+                        <MotionContainer initial={{ y: 20 }} delay={index} duration={1} >
+                            <MyProject  {...props} isLoading={isLoading} />
+                        </MotionContainer>
+                    </Fragment>
+
+                })}
             </ul >
         </section>
     )

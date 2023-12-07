@@ -1,14 +1,13 @@
 'use client'
 
-import LetteringText from '@/hooks/useLetterizeText';
-import ContactsForm from '@/components/form/Form';
-import './contacts.scss'
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { BASE_API } from '@/helpers/constants';
-import { IContactsPageTypes } from '@/types/types';
 import SectionText from '@/components/SectionText/SectionText';
-import PageTransitionContainer from '@/components/ui/PageTransitionContainer/PageTransitionContainer';
+import LetteringText from '@/hooks/useLetterizeText';
+import { IContactsPageTypes } from '@/types/types';
+import ContactsForm from '@/components/form/Form';
+import { useQuery } from '@tanstack/react-query';
+import { BASE_API } from '@/helpers/constants';
+import axios from 'axios';
+import './contacts.scss'
 
 const Contacts = () => {
     const title = "Contacts"
@@ -32,17 +31,12 @@ const Contacts = () => {
                 <h2 className="discription-title" aria-label={title}>
                     <LetteringText text={title} isLoaded={!isLoading} />
                 </h2>
-                {isSuccess &&
-                    <>
-                        <SectionText
-                            arrayText={data?.contactsText.contactsText as string[]}
-                            sectionClass='contacts-text'
-                            isLoaded={isLoading}
-                        />
-                        <ContactsForm />
-                    </>
-                }
-
+                <SectionText
+                    arrayText={data?.contactsText.contactsText as string[]}
+                    sectionClass='contacts-text'
+                    isLoaded={isLoading}
+                />
+                <ContactsForm />
             </div>
             <div className="section-wrapper--visual">
 

@@ -1,9 +1,8 @@
-import { IAboutCVResType } from "@/types/types";
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
-import { BASE_API } from '@/helpers/constants'
 import { useQuery } from '@tanstack/react-query';
+import { IAboutCVResType } from "@/types/types";
+import { BASE_API } from '@/helpers/constants'
+import { FC } from "react";
 import axios from 'axios';
-
 
 interface DownloadPDFProps {
     fileName?: string,

@@ -1,7 +1,6 @@
 import LetteringText from '@/hooks/useLetterizeText';
 import Link from 'next/link';
 import './styles/home.scss'
-import PageTransitionContainer from '@/components/ui/PageTransitionContainer/PageTransitionContainer';
 
 export const metadata = {
     title: 'Home | Portfolio Oliinyk Yevgenii',

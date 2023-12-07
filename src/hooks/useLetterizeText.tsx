@@ -4,8 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Fragment} from "react"
 import Image from "next/image";
 
-import Pic from '../../public/assets/Y.png'
-
 interface IProps {
     text: string
     isLoaded: boolean
@@ -67,7 +65,9 @@ export default function LetteringText({ text, isLoaded }: IProps) {
                     }
                 }}>
                 <Image className='home-logo'
-                    src={Pic}
+                    src='/assets/Y.png'
+                    width={100}
+                    height={90}
                     alt="Y"
                 />
             </motion.span>

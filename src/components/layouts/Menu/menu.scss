@@ -1,4 +1,4 @@
-@import "../../app/styles/variables.scss";
+@import "../../../app/styles/variables.scss";
 
 .menu {
     display: flex;
@@ -13,7 +13,7 @@
     top: 0;
     right: auto;
     bottom: 0;
-    z-index: 3;
+    z-index: 50;
 
     background: $navBgColor;
 
@@ -38,13 +38,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
 
-            & > span {
+        &--name{
                 margin-top: 1rem;
                 font-size: 1.8rem;
                 font-weight: 700;
             }
-        }
 
         &--text {
             margin-top: 1rem;
@@ -108,7 +108,7 @@
     &-social {
         display: flex;
         justify-content: center;
-        
+
         height: 20rem;
         padding: 1.5rem 0;
 
@@ -145,22 +145,8 @@
 @media (max-width: 1300px) {
     .menu {
         width: 100%;
-
-        left: -5%;
-
-        z-index: -1;
-        opacity: 0;
-
-        transition: all 0.4s ease-in 100ms;
-
-        &-open {
-            left: 0;
-            z-index: 10;
-            opacity: 1;
-        }
-
         &-social {
-            gap: 20px;
-        }
+        gap: 20px;
+    }
     }
 }

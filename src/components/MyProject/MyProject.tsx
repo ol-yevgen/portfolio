@@ -1,6 +1,6 @@
-import { IProjectTypes } from '@/types/types';
 import { gitHubIcon, linkIcon } from '../../../public/assets/icons';
 import LetteringText from '../../hooks/useLetterizeText';
+import { IProjectTypes } from '@/types/types';
 import Image from 'next/image';
 
 interface IProps extends IProjectTypes {

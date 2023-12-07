@@ -1,4 +1,5 @@
 'use client'
+
 import { PropsWithChildren } from "react";
 import { motion } from 'framer-motion';
 
@@ -23,6 +24,7 @@ export default function MotionContainer({ children, initial, delay, duration }: 
                 },
                 type: 'spring'
             }}
+            exit={{ opacity: 0, transition: { delay: delay, duration: duration, ease: [0.6, -0.05, 0.01, 0.99] } }}
         >
             {children}
         </motion.div>

@@ -88,3 +88,9 @@ export interface IFormDataTypes {
     email: string;
     message: string;
 }
+
+export interface INavListTypes {
+    id: string,
+    link: string,
+    label: string
+}

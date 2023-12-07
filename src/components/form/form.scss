@@ -24,10 +24,14 @@
         }
     }
 
-    &-btn {
+    &-submit {
         grid-column-start: 2;
+        width: 100%;
+    }
+
+    &-btn {
+        width: 100%;
         margin-top: 1rem !important;
-        width: 100% !important;
 
         background: transparent;
     }
@@ -38,7 +42,7 @@
         top: -3rem;
         left: -2rem;
 
-        font-family: "La Belle Aurore", cursive;
+        font-family: var(--font-La-Belle-Aurore), cursive;
         font-size: 18px;
 
         color: $tagsColor;
@@ -50,7 +54,7 @@
         bottom: -4rem;
         left: -2rem;
 
-        font-family: "La Belle Aurore", cursive;
+        font-family: var(--font-La-Belle-Aurore), cursive;
         font-size: 18px;
 
         color: $tagsColor;
@@ -94,10 +98,21 @@ textarea {
     border-bottom: 2px solid $mainGreenColor;
 }
 
+@media (max-width: 900px) {
+    .section-wrapper--visual {
+        display: none;
+    }
+}
+
 @media (max-width: 500px) {
     .form {
         &-item--half {
           grid-column: span 2;
+        }
+
+        &-submit {
+            grid-column-start: 1;
+            grid-column: span 2;
         }
     }
 }

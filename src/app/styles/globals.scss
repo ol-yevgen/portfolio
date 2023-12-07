@@ -1,7 +1,7 @@
 @import "mixins.scss";
 @import "./variables.scss";
 @import "./animations.scss";
-@import "../../../public/fonts/fonts.scss";
+// @import "../../../public/fonts/fonts.scss";
 
 *,
 *::before,
@@ -19,14 +19,14 @@ html {
     scroll-behavior: smooth;
 
     cursor:
-        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABIFBMVEUAAAA/nBM+nRQ/nBM+nRQ/nhQ/nBM/nBQ/nBM/nBM+nRM/mxOAgAA/nBNAnyA/nBNVqgA/nBM/nBM+nBM/nBNAnBU/nBM/nBM/nBNCnRM/nBI+nRM/nBNDmxY/mxQ5nA4/nRI+nhI/nRM/nBNGohc/nBNEmRE9nBI/mxNBnBQ/nRNCoRM+mxI9mRQ+mxZAnBM/nRVBnRE/nBRCnBBAnRQ/nBM+nBQ/nREAgAA7mRE/nBIzmQBAgAAA/wBJkgA5qhxBnRBEmRE/mxI6lxc5jhxAnwA9mxM9nBNAmQ07nRQ8lg8/nBNNmRo/nBNAlxg+nxdBnhNAmxI8mxQ/nRE/nRNCnhRDmhQ+mw9BmxRBnxU/nBM+mxdCnRI/nBNAmxNVqgDgTb8WAAAAYHRSTlMA/3/VgH78jv73Xq4CrQjsA7bOeeUkldz0QsFx4BdhEqcdkYQLah5HvVueG1QZOohuO9EfWfl7aAIemgUEAQcJLw+KFgkITzYUJxHYCvAgLTccM0mrMiYhM0qiIUbjpAZfxj6dAAABD0lEQVR4nFXQ5XLDMAwAYMuBhZosSQPlrrAyrDhmZuZu7/8Wk+3ebtMf6z5JJmI3SkbwTf7HWxLii6/87uVfNGLA0LKuf3L6izcRmqqiO+n9z84GRzsBMJtkitEYi1eDcPSyhVoFKBFyFIyano6uSwbiaxLWF9mM1Zo6bH/XJmSvDoM1sf92nZ3ZYy1l0B8EXnuI7zmWpmLocVt+VEEzWzy/8yB9juvQxD6pLYasEJwV7OO20D8Q2tAh7DzjfdEUBessgiyMpQgfhUblfIXjTpFdTxil/plonWIXaMKofMyfQp5miGa7r8gyYmaJY8UFSAxJrmv4jFNi/rZZ5uXDj1p1QmvzX9205slq4b5b+AFOBBoRor9LTgAAAABJRU5ErkJggg==)
+        url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iMjNweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNOSA0Ljk0MTk4QzYuNDc1NjEgNC4wMjY5MyA1LjEyOSAzLjY1MzgxIDQuMzkxNDEgNC4zOTE0MUMzLjU1MTQ2IDUuMjMxMzYgNC4xNTE4NyA2Ljg2MTA2IDUuMzUyNyAxMC4xMjA1TDcuMzYwMyAxNS41Njk2QzcuOTYyMjUgMTcuMjAzNSA4LjI2MzIyIDE4LjAyMDQgOC45MjQ4OSAxOC4xNjU4QzkuNTg2NTYgMTguMzExMSAxMC4yMDIyIDE3LjY5NTUgMTEuNDMzNCAxNi40NjQzTDEyLjYzNjEgMTUuMjYxNkwxNi41NzQ0IDE5LjE5OTlDMTYuOTgyMSAxOS42MDc3IDE3LjE4NiAxOS44MTE2IDE3LjQxMzUgMTkuOTA1OEMxNy43MTY4IDIwLjAzMTQgMTguMDU3NSAyMC4wMzE0IDE4LjM2MDggMTkuOTA1OEMxOC41ODgyIDE5LjgxMTYgMTguNzkyMSAxOS42MDc3IDE5LjE5OTkgMTkuMTk5OUMxOS42MDc3IDE4Ljc5MjEgMTkuODExNiAxOC41ODgyIDE5LjkwNTggMTguMzYwOEMyMC4wMzE0IDE4LjA1NzUgMjAuMDMxNCAxNy43MTY4IDE5LjkwNTggMTcuNDEzNUMxOS44MTE2IDE3LjE4NiAxOS42MDc3IDE2Ljk4MjEgMTkuMTk5OSAxNi41NzQ0TDE1LjI2MTYgMTIuNjM2MUwxNi40NjQzIDExLjQzMzRDMTcuNjk1NSAxMC4yMDIyIDE4LjMxMTEgOS41ODY1NiAxOC4xNjU4IDguOTI0ODlDMTguMDIwNCA4LjI2MzIyIDE3LjIwMzUgNy45NjIyNSAxNS41Njk2IDcuMzYwM0wxMyA2LjQxMzU5IiBzdHJva2U9IiMwOGZkZDgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4NCjwvc3ZnPg==)
             2 2,
         pointer;
 }
 
 html,
 body {
-    font-family: "Sofia Pro", sans-serif;
+    // font-family: "Sofia Pro", sans-serif;
 
     color: $textColor;
     background: $bgColor;
@@ -86,7 +86,7 @@ h2 {
         top: -4rem;
         left: -2rem;
 
-        font-family: "La Belle Aurore", cursive;
+        font-family: var(--font-La-Belle-Aurore), cursive;
         font-size: 18px;
 
         color: $tagsColor;
@@ -98,7 +98,7 @@ h2 {
         bottom: -5rem;
         left: -2rem;
 
-        font-family: "La Belle Aurore", cursive;
+        font-family: var(--font-La-Belle-Aurore), cursive;
         font-size: 18px;
 
         color: $tagsColor;
@@ -240,7 +240,7 @@ main {
 
 .tags {
     position: relative;
-    font-family: "La Belle Aurore", cursive;
+    font-family: var(--font-La-Belle-Aurore), cursive;
     font-size: 18px;
 
     color: $tagsColor;
@@ -283,7 +283,7 @@ main {
         top: -2.5rem;
         left: -2rem;
 
-        font-family: "La Belle Aurore", cursive;
+        font-family: var(--font-La-Belle-Aurore), cursive;
         font-size: 18px;
 
         color: $tagsColor;
@@ -295,7 +295,7 @@ main {
         bottom: -4rem;
         left: -2rem;
 
-        font-family: "La Belle Aurore", cursive;
+        font-family: var(--font-La-Belle-Aurore), cursive;
         font-size: 18px;
 
         color: $tagsColor;
@@ -414,4 +414,4 @@ main {
 }
 
 @import "../../components/ui/Buttons/buttons.scss";
-// @import './media.scss';
+

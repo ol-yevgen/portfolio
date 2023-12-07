@@ -2,8 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import {
-    SCREEN_S, SCREEN_SM, SCREEN_MD, SCREEN_LG, SCREEN_L, SCREEN_XL, SCREEN_XXL, SCREEN_XXXL
-} from '@/helpers/constBreakpoints';
+    SCREEN_S,
+    SCREEN_SM,
+    SCREEN_MD,
+    SCREEN_LG,
+    SCREEN_L,
+    SCREEN_XL,
+    SCREEN_XXL,
+    SCREEN_XXXL
+} from '@/helpers/constants';
 
 export const useResize = () => {
     const [width, setWidth] = useState<number>();

@@ -1,6 +1,8 @@
+'use client' 
+
 import { BurgerContext } from '@/providers/BurgerProvider';
-import './burger.scss';
 import { useContext, useEffect } from 'react';
+import './burger.scss';
 
 const Burger = () => {
     const { isOpen, setIsOpen } = useContext(BurgerContext)

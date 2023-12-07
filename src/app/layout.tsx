@@ -2,7 +2,7 @@ import { QueryClientProvider } from '@/providers/QueryClientProvider'
 import type { Metadata } from 'next'
 import Head from 'next/head'
 
-import Menu from '@/components/Menu/Menu'
+import Menu from '@/components/layouts/Menu/Menu'
 import './styles/globals.scss'
 import { BurgerProvider } from '@/providers/BurgerProvider'
 import Header from '@/components/layouts/Header/Header'
@@ -10,6 +10,7 @@ import Footer from '@/components/layouts/Footer/Footer'
 import Spinner from '@/components/ui/Spinner/Spinner'
 import { Suspense } from 'react'
 import PageTransitionContainer from '@/components/ui/PageTransitionContainer/PageTransitionContainer'
+import { sofiaPro, laBelleAurore } from '../../public/fonts/fonts'
 
 export const metadata: Metadata = {
     title: 'Portfolio Oliinyk Yevgenii',
@@ -26,7 +27,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>
+            <body className={`${sofiaPro.className} ${laBelleAurore.variable}`}>
                 <QueryClientProvider>
                     <BurgerProvider>
                         <div className="app">
@@ -34,20 +35,19 @@ export default function RootLayout({
                             <div className='main-page'
                             >
                                 <Header />
-                                <Suspense fallback={
+                                <main
+                                    className="animation-container"
+                                >
+                                    {children}
+                                </main>
+                                {/* <Suspense fallback={
                                     <Spinner
                                         bg=''
                                         size='100px'
                                         color="#08fdd8"
                                     />}>
-                                    <main
-                                        className="animation-container"
-                                    >
-                                        <PageTransitionContainer>
-                                            {children}
-                                        </PageTransitionContainer>
-                                    </main>
-                                </Suspense>
+                                    
+                                </Suspense> */}
 
                                 <Footer />
                             </div>

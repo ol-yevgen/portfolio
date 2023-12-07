@@ -5,9 +5,9 @@ import { useField } from 'formik';
 export const useValidate = (inputType: string, { ...props }: any) => {
     const [field, meta] = useField(props);
     let inputValidated = () => { };
-    
+
     switch (inputType) {
-        
+
         case 'input':
             inputValidated = () => {
 
@@ -39,7 +39,7 @@ export const useValidate = (inputType: string, { ...props }: any) => {
             };
 
             return inputValidated
-        
+
         default:
             return
         
