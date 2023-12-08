@@ -1,7 +1,11 @@
+import { useQuery } from '@tanstack/react-query';
 import { gitHubIcon, linkIcon } from '../../../public/assets/icons';
 import LetteringText from '../../hooks/useLetterizeText';
 import { IProjectTypes } from '@/types/types';
 import Image from 'next/image';
+import { BASE_API } from '@/helpers/constants';
+import axios from 'axios';
+import { GetServerSideProps } from 'next';
 
 interface IProps extends IProjectTypes {
     isLoading: boolean
@@ -9,20 +13,29 @@ interface IProps extends IProjectTypes {
 
 const MyProject = ({
     projectLabel,
-    projectImage,
     projectStack,
     projectDemo,
     projectGit,
-    isLoading
-}: IProps) => {
+}: IProjectTypes) => {
+    const { data, isLoading: imageLoading, isError, error } = useQuery({
+        queryKey: ['image', projectLabel],
+        queryFn: async () => {
+            try {
+                const { data } = await axios.get(`${BASE_API}/api/projectImage?image=${projectLabel}`)
+                return data.image
+            } catch (error) {
+                console.log(error);
+            }
+        },
+    })
     
     return (
+        data &&
         <li className="projects-item">
-            <Image className="projects-item--img" src={projectImage} width={40} height={40} alt={projectLabel} />
+            <Image className="projects-item--img" src={data} width={40} height={40} alt={projectLabel} />
             <div className="projects-item--description">
                 <h3 className="projects-item--title" aria-label={projectLabel}>
-                    <LetteringText text={projectLabel} isLoaded={!isLoading} />
-
+                    <LetteringText text={projectLabel} isLoaded={!imageLoading} />
                 </h3>
                 <p className="projects-item--text">{projectStack}</p>
                 <div className="projects-item--social">

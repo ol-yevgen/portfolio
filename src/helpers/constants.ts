@@ -1,4 +1,5 @@
 export const BASE_API = process.env.NEXT_PUBLIC_BASE_API as string
+
 export const SCREEN_S = 400;
 export const SCREEN_SM = 507;
 export const SCREEN_MD = 700;

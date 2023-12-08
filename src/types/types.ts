@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react"
+
 export interface IAboutReqTypes {
     data: IAboutPageTypes
 }
@@ -57,6 +59,7 @@ export interface IProjectsReqTypes {
     id?: string;
     projects?: IProjectTypes[];
     filters?: string[]
+    totalProjects: number
     message?: string
 }
 
@@ -93,4 +96,12 @@ export interface INavListTypes {
     id: string,
     link: string,
     label: string
+}
+
+export interface IFiltersProps {
+    activeFilter: string
+    filters: string[]
+    setActiveFilter: Dispatch<SetStateAction<string>>
+    isLoading: boolean
+    setPage: Dispatch<SetStateAction<number>>
 }

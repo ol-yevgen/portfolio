@@ -24,7 +24,7 @@ export default function MotionContainer({ children, initial, delay, duration }: 
                 },
                 type: 'spring'
             }}
-            exit={{ opacity: 0, transition: { delay: delay, duration: duration, ease: [0.6, -0.05, 0.01, 0.99] } }}
+            exit={{ opacity: 0, transition: { delay: delay * 0.1, duration: duration, ease: [0.6, -0.05, 0.01, 0.99] } }}
         >
             {children}
         </motion.div>

@@ -4,24 +4,38 @@ import { IProjectTypes } from '@/types/types'
 
 export async function GET(req: NextRequest) {
     try {
-        const url = new URL(req.url)
-        const filter = url.searchParams.get("filter")
+        const all = await prisma.projectsList.findMany()
 
-        const projects = (await prisma.projectsList.findMany()).reverse()
+        const projects = (await prisma.projectsList.findMany({
+            orderBy: {
+                createdAt: 'desc'
+            },
+            select: {
+                id: true,
+                projectLabel: true,
+                projectStack: true,
+                projectDemo: true,
+                projectGit: true,
+                projectFilter: true,
+                createdAt: true,
+                updatedAt: true,
+            },
+        }))
 
-        const uniqFilters = Array.from(new Set(projects.map(project => {
-            return project.projectFilter
+        const uniqFilters = Array.from(new Set(all.map(filter => {
+            return filter.projectFilter
         })))
 
-        const filters = ['all', ...uniqFilters ]
+        const filters = ['all', ...uniqFilters]
+        const totalProjects = all.length
 
         if (projects.length === 0) {
             return NextResponse.json({ message: 'No any projects'}, { status: 400 })
         }
 
-        return NextResponse.json({ projects, filters }, { status: 200 })
+        return NextResponse.json({ projects, filters, totalProjects }, { status: 200 })
     } catch (error) {
-        return NextResponse.json({ message: 'Skills icons error', error }, { status: 500 })
+        return NextResponse.json({ message: 'GET projects error', error }, { status: 500 })
     }
 }
 
@@ -78,6 +92,6 @@ export async function POST(request: NextRequest) {
             { message: `Project ${projectLabel} created`},
             { status: 200 })
     } catch (error) {
-        return NextResponse.json({ message: 'About page error', error }, { status: 500 })
+        return NextResponse.json({ message: 'POST project error', error }, { status: 500 })
     }
 }

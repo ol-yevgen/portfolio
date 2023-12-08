@@ -36,7 +36,6 @@ const Menu = () => {
 
                     exit={{ opacity: 0, transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] } }}
                 >
-                    {/* <menu className='menu'> */}
                     <Logo setIsOpen={setIsOpen} isOpen={isOpen} />
                     <Navbar
                         onCloseOpenMenu={setIsOpen}
@@ -49,7 +48,6 @@ const Menu = () => {
                                         className="social-link"
                                         href={link.href}
                                         target="_blank"
-                                    // name="linkedIn"
                                     >
                                         {link.icon}
                                     </Link>
@@ -58,7 +56,6 @@ const Menu = () => {
                         })}
 
                     </ul >
-                    {/* </menu > */}
                 </motion.menu>
             }
         </AnimatePresence>

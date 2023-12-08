@@ -1,16 +1,12 @@
 import { QueryClientProvider } from '@/providers/QueryClientProvider'
-import type { Metadata } from 'next'
-import Head from 'next/head'
-
-import Menu from '@/components/layouts/Menu/Menu'
-import './styles/globals.scss'
+import { sofiaPro, laBelleAurore } from '../../public/fonts/fonts'
 import { BurgerProvider } from '@/providers/BurgerProvider'
 import Header from '@/components/layouts/Header/Header'
 import Footer from '@/components/layouts/Footer/Footer'
 import Spinner from '@/components/ui/Spinner/Spinner'
-import { Suspense } from 'react'
-import PageTransitionContainer from '@/components/ui/PageTransitionContainer/PageTransitionContainer'
-import { sofiaPro, laBelleAurore } from '../../public/fonts/fonts'
+import Menu from '@/components/layouts/Menu/Menu'
+import type { Metadata } from 'next'
+import './styles/globals.scss'
 
 export const metadata: Metadata = {
     title: 'Portfolio Oliinyk Yevgenii',
@@ -40,15 +36,6 @@ export default function RootLayout({
                                 >
                                     {children}
                                 </main>
-                                {/* <Suspense fallback={
-                                    <Spinner
-                                        bg=''
-                                        size='100px'
-                                        color="#08fdd8"
-                                    />}>
-                                    
-                                </Suspense> */}
-
                                 <Footer />
                             </div>
                         </div>
