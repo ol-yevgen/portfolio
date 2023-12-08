@@ -56,7 +56,7 @@ export default function MobileFilters({ filters, setActiveFilter, isLoading, set
                                             },
                                             type: 'spring'
                                         }}
-                                        exit={{ opacity: 0, transition: { delay: 0.4, duration: 0.9, ease: [0.6, -0.05, 0.01, 0.99] } }}
+                                        exit={{ opacity: 0, transition: { delay: 0.4, duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] } }}
                                     >
                                         {filtersList.slice(1).sort().map((filter, index) => {
                                             return (
