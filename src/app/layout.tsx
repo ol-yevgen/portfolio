@@ -7,6 +7,7 @@ import Spinner from '@/components/ui/Spinner/Spinner'
 import Menu from '@/components/layouts/Menu/Menu'
 import type { Metadata } from 'next'
 import './styles/globals.scss'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
     title: 'Portfolio Oliinyk Yevgenii',
@@ -42,6 +43,7 @@ export default function RootLayout({
 
                     </BurgerProvider>
                 </QueryClientProvider>
+                <SpeedInsights/>
             </body>
         </html >
     )
