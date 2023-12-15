@@ -1,12 +1,12 @@
-@import "../styles/variables.scss";
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
 
 h4 {
     text-align: center;
 }
 
 .projects {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: flex-start;
 
     &-filters {
@@ -21,10 +21,8 @@ h4 {
         }
 
         &--label {
+            @include flex-container-center;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             width: 100%;
             padding: 1.5rem 0;
@@ -51,12 +49,10 @@ h4 {
                 cursor: pointer;
                 color: $mainGreenColor;
 
-                &::before {
-                    opacity: 1;
-                }
-
+                &::before,
                 &::after {
                     opacity: 1;
+                    color: $mainGreenColor;
                 }
             }
         }
@@ -139,9 +135,7 @@ h4 {
     }
 
     &-loading {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-container-center;
 
         width: 100%;
         height: 100%;
@@ -258,12 +252,6 @@ h4 {
         margin-top: 3rem;
 
         padding: 0;
-
-        // &-filters {
-        //     display: none;
-        //     flex-direction: column;
-        //     align-items: center;
-        // }
     }
 }
 

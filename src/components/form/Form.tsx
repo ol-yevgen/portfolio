@@ -13,6 +13,7 @@ import Input from '../ui/Input/Input';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import './form.scss'
+import Button from '../ui/Buttons/Button';
 
 const cleanForm = (values: IFormDataTypes) => {
     const cleanName = values.name = '';
@@ -150,14 +151,7 @@ const ContactsForm = () => {
 
                     <div className='form-submit'>
                         <MotionContainer initial={{ y: 40 }} delay={4} duration={1} >
-                            <button
-                                type="submit"
-                                className="btn form-btn"
-                                style={{ zIndex: 1 }}
-                                onClick={() => !isValid && setIsSubmit(true)}
-                            >
-                                Send message
-                            </button>
+                            <Button title='Send message' action={() => !isValid && setIsSubmit(true)} classNames='form-btn'/>
                         </MotionContainer >
                     </div>
 

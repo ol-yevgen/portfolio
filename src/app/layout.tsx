@@ -1,13 +1,14 @@
 import { QueryClientProvider } from '@/providers/QueryClientProvider'
 import { sofiaPro, laBelleAurore } from '../../public/fonts/fonts'
 import { BurgerProvider } from '@/providers/BurgerProvider'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from '@/components/layouts/Header/Header'
 import Footer from '@/components/layouts/Footer/Footer'
 import Spinner from '@/components/ui/Spinner/Spinner'
 import Menu from '@/components/layouts/Menu/Menu'
 import type { Metadata } from 'next'
 import './styles/globals.scss'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+// import './styles/gpt.scss'
 
 export const metadata: Metadata = {
     title: 'Portfolio Oliinyk Yevgenii',

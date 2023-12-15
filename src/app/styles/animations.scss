@@ -1,35 +1,5 @@
 @import "./variables.scss";
 
-/*page animation*/
-
-// .fade {
-//     height: 100%;
-// }
-
-.fade-enter {
-  opacity: 0;
-  transform: scale(1.1);
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: all 800ms;
-}
-
-.fade-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.fade-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 400ms;
-}
-
-/*page animation finished*/
-
 /*text animation*/
 .show {
     width: 100%;
@@ -41,13 +11,12 @@
 }
 
 .bubble {
-    transition: all 0.3s ease-in;
+    @include transition-in-03s;
     display: inline-block;
 }
 
 .bubble:hover {
     color: $mainGreenColor;
-    // animation: bubbleAnimation 1s ease-in-out;
 }
 
 a.active-link {

@@ -43,7 +43,7 @@ const Skills = () => {
             {!iconsLoading &&
                 <section className="container skills">
                     <h2
-                        className="discription-title"
+                        className="discription-title section-title"
                         aria-label={title}
                     >
                         <LetteringText text={title} isLoaded={!iconsLoading} />

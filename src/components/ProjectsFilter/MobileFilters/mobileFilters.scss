@@ -1,5 +1,5 @@
-// @import "mixins.scss";
-@import "../../../app/styles/variables.scss";
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
 
 .mobile-filters {
     display: flex;
@@ -13,9 +13,7 @@
     position: relative;
 
     &--list {
-        display: flex;
-        flex-direction: column;
-        // gap: 5px;
+        @include flex-column;
 
         position: absolute;
         top: 100%;
@@ -23,7 +21,6 @@
         z-index: 50;
 
         width: 100%;
-        // padding: 10px 0;
 
         background: $navBgColor;
         box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
@@ -48,10 +45,7 @@
 }
 
 @media (max-width: 500px) {
-    .filter-selector {
-
-        &__list {
-            width: 100%;
-        }
+    .filter-selector__list {
+        width: 100%;
     }
 }

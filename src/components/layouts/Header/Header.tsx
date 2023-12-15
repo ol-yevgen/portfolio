@@ -8,10 +8,9 @@ const Header = () => {
     const windowWidth = useResize()
 
     return (
-        <header>
+        <header className='header'>
             <div className="header-tags">
                 <span className="tags open-tags">html</span>
-                <br />
                 <span className="tags open-tags body-tags">body</span>
             </div>
             {windowWidth.isScreenXl

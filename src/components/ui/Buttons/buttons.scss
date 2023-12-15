@@ -1,11 +1,10 @@
-@import "../../../app/styles/variables.scss";
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
 
 .btn {
+    @include flex-container-center;
     position: relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 230px;
 
     margin-top: 8.7rem;
@@ -21,6 +20,10 @@
     color: $mainGreenColor;
 
     transition: all 1.5s ease;
+
+    &-error {
+        margin: 0;
+    }
 
     &:hover {
         cursor: pointer;

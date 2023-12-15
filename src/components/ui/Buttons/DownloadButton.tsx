@@ -3,6 +3,7 @@ import { IAboutCVResType } from "@/types/types";
 import { BASE_API } from '@/helpers/constants'
 import { FC } from "react";
 import axios from 'axios';
+import Button from './Button';
 
 interface DownloadPDFProps {
     fileName?: string,
@@ -40,9 +41,7 @@ const DownloadButton: FC<DownloadPDFProps> = ({ fileName }) => {
     };
 
     return (
-        <a href="#" onClick={downloadFile} className="btn about-btn">
-            Download CV
-        </a>
+        <Button title='Download CV' action={downloadFile} classNames="about-btn" />
     );
 };
 

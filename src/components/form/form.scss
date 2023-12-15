@@ -1,4 +1,5 @@
-@import "../../app/styles/variables.scss";
+@import "@/app/styles/variables.scss";
+@import "@/app/styles/mixins.scss";
 
 .form {
     position: relative;
@@ -36,29 +37,7 @@
         background: transparent;
     }
 
-    &::before {
-        content: "<form>";
-        position: absolute;
-        top: -3rem;
-        left: -2rem;
-
-        font-family: var(--font-La-Belle-Aurore), cursive;
-        font-size: 18px;
-
-        color: $tagsColor;
-    }
-
-    &::after {
-        content: "</form>";
-        position: absolute;
-        bottom: -4rem;
-        left: -2rem;
-
-        font-family: var(--font-La-Belle-Aurore), cursive;
-        font-size: 18px;
-
-        color: $tagsColor;
-    }
+    @include tags-decor('<form>', '</form>', -3rem, -4rem )
 }
 
 input,
@@ -79,11 +58,7 @@ textarea {
     color: $formTextColor;
     background: $formBgColor;
 
-    &:focus {
-        outline: none;
-        border-bottom: 2px solid $mainGreenColor;
-    }
-
+    &:focus,
     &:active {
         outline: none;
         border-bottom: 2px solid $mainGreenColor;

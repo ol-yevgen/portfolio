@@ -2,7 +2,7 @@
 
 import MotionContainer from '@/components/ui/MotionContainer/MotionContainer';
 import DownloadButton from '@/components/ui/Buttons/DownloadButton'
-import { IAboutPageTypes, IAboutReqTypes } from '@/types/types'
+import { IAboutPageTypes, IAboutReqTypes, IAboutCVResType } from '@/types/types'
 import SectionText from '@/components/SectionText/SectionText';
 import LetteringText from '../../hooks/useLetterizeText';
 import Spinner from '@/components/ui/Spinner/Spinner';
@@ -21,6 +21,10 @@ export default function About() {
             return data as IAboutPageTypes
         },
     })
+    interface IProps {
+        data: IAboutCVResType
+        fileName: string
+    }
 
     const title = "About me"
 

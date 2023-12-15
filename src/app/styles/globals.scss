@@ -1,146 +1,31 @@
 @import "mixins.scss";
 @import "./variables.scss";
 @import "./animations.scss";
-// @import "../../../public/fonts/fonts.scss";
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    height: 100%;
-
-    font-size: 62.5%;
-
-    scroll-behavior: smooth;
-
-    cursor:
-        url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iMjNweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNOSA0Ljk0MTk4QzYuNDc1NjEgNC4wMjY5MyA1LjEyOSAzLjY1MzgxIDQuMzkxNDEgNC4zOTE0MUMzLjU1MTQ2IDUuMjMxMzYgNC4xNTE4NyA2Ljg2MTA2IDUuMzUyNyAxMC4xMjA1TDcuMzYwMyAxNS41Njk2QzcuOTYyMjUgMTcuMjAzNSA4LjI2MzIyIDE4LjAyMDQgOC45MjQ4OSAxOC4xNjU4QzkuNTg2NTYgMTguMzExMSAxMC4yMDIyIDE3LjY5NTUgMTEuNDMzNCAxNi40NjQzTDEyLjYzNjEgMTUuMjYxNkwxNi41NzQ0IDE5LjE5OTlDMTYuOTgyMSAxOS42MDc3IDE3LjE4NiAxOS44MTE2IDE3LjQxMzUgMTkuOTA1OEMxNy43MTY4IDIwLjAzMTQgMTguMDU3NSAyMC4wMzE0IDE4LjM2MDggMTkuOTA1OEMxOC41ODgyIDE5LjgxMTYgMTguNzkyMSAxOS42MDc3IDE5LjE5OTkgMTkuMTk5OUMxOS42MDc3IDE4Ljc5MjEgMTkuODExNiAxOC41ODgyIDE5LjkwNTggMTguMzYwOEMyMC4wMzE0IDE4LjA1NzUgMjAuMDMxNCAxNy43MTY4IDE5LjkwNTggMTcuNDEzNUMxOS44MTE2IDE3LjE4NiAxOS42MDc3IDE2Ljk4MjEgMTkuMTk5OSAxNi41NzQ0TDE1LjI2MTYgMTIuNjM2MUwxNi40NjQzIDExLjQzMzRDMTcuNjk1NSAxMC4yMDIyIDE4LjMxMTEgOS41ODY1NiAxOC4xNjU4IDguOTI0ODlDMTguMDIwNCA4LjI2MzIyIDE3LjIwMzUgNy45NjIyNSAxNS41Njk2IDcuMzYwM0wxMyA2LjQxMzU5IiBzdHJva2U9IiMwOGZkZDgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4NCjwvc3ZnPg==)
-            2 2,
-        pointer;
-}
-
-html,
-body {
-    // font-family: "Sofia Pro", sans-serif;
-
-    color: $textColor;
-    background: $bgColor;
-
-    scrollbar-color: $mainGreenColor transparent;
-    scrollbar-width: thin;
-}
+@include main-resets(
+    62.5%, 
+    $mainGreenColor, 
+    $bgColor, 
+    $textColor, 
+    $mainGreenColor
+);
 
 body {
-    min-width: 320px;
     font-size: 1.6rem;
-
-    overflow-x: hidden;
-}
-
-::-webkit-scrollbar {
-    width: 5px;
-
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: $mainGreenColor;
-}
-
-ul,
-li,
-dl {
-    list-style-type: none;
-
-    margin: 0;
-    padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
 }
 
 h2 {
-    position: relative;
-
     font-weight: 700;
     font-size: 6.3rem;
     line-height: 6.3rem;
 
     color: $mainGreenColor;
 
-    &::before {
-        content: "<h2>";
-        position: absolute;
-        top: -4rem;
-        left: -2rem;
-
-        font-family: var(--font-La-Belle-Aurore), cursive;
-        font-size: 18px;
-
-        color: $tagsColor;
-    }
-
-    &::after {
-        content: "</h2>";
-        position: absolute;
-        bottom: -5rem;
-        left: -2rem;
-
-        font-family: var(--font-La-Belle-Aurore), cursive;
-        font-size: 18px;
-
-        color: $tagsColor;
-    }
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-
-    transition: all 0.4s ease-in;
-
-    &:hover {
-        text-decoration: none;
-        color: inherit;
-    }
+    @include tags-decor('<h2>', '</h2>', -4rem, -5rem)
 }
 
 p {
-    margin: 0;
-    padding: 0;
-
     line-height: 2rem;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-input,
-textarea,
-select,
-button {
-    font: inherit;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
 }
 
 section {
@@ -153,14 +38,8 @@ main {
     padding: 3rem;
 }
 
-::before,
-::after {
-    letter-spacing: normal;
-}
-
 #root {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
 
     min-height: 100vh;
 }
@@ -187,10 +66,23 @@ main {
 .container {
     height: 100%;
     padding-left: 3rem;
+
+    &-page {
+        height: 100%;
+    }
+
+    &-error {
+        @include flex-column;
+        align-items: center;
+        gap: 20px;
+
+        width: 100%;
+        margin-top: 8rem;
+    }
 }
 
-.container-page {
-    height: 100%;
+.section-title {
+    margin-top: 2rem;
 }
 
 .section-wrapper {
@@ -204,9 +96,7 @@ main {
     }
 
     &--visual {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-container-center;
 
         width: 50%;
         min-height: 420px;
@@ -226,8 +116,7 @@ main {
 }
 
 .text-container {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     gap: 20px;
 
     &:first-child {
@@ -239,35 +128,25 @@ main {
 /* decoration tags*/
 
 .tags {
-    position: relative;
+    display: block;
     font-family: var(--font-La-Belle-Aurore), cursive;
     font-size: 18px;
 
-    color: $tagsColor;
+    color: $tagsColor;    
+}
+
+.open-tags::after,
+.close-tags::after {
+    content: ">";
+    margin-left: 3px;
 }
 
 .open-tags::before {
     content: "<";
 }
 
-.open-tags::after {
-    content: ">";
-
-    position: absolute;
-    right: -10px;
-    top: 4px;
-}
-
 .close-tags::before {
     content: "</";
-}
-
-.close-tags::after {
-    content: ">";
-
-    position: absolute;
-    right: -10px;
-    top: 4px;
 }
 
 .body-tags {
@@ -275,59 +154,10 @@ main {
 }
 
 .tag-p {
-    position: relative;
     margin-top: 6rem;
-    &::before {
-        content: "<p>";
-        position: absolute;
-        top: -2.5rem;
-        left: -2rem;
 
-        font-family: var(--font-La-Belle-Aurore), cursive;
-        font-size: 18px;
-
-        color: $tagsColor;
-    }
-
-    &::after {
-        content: "</p>";
-        position: absolute;
-        bottom: -4rem;
-        left: -2rem;
-
-        font-family: var(--font-La-Belle-Aurore), cursive;
-        font-size: 18px;
-
-        color: $tagsColor;
-    }
+    @include tags-decor('<p>', '</p>', -2.5rem, -4rem)
 }
-
-// .slide-in {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-
-//     z-index: 2;
-
-//     width: 100%;
-//     height: 100vh;
-
-//     background: $bgColor;
-//     transform-origin: bottom;
-// }
-
-// .slide-out {
-// position: absolute;
-//     top: 0;
-//     left: 0;
-
-//     width: 100%;
-//     height: 100vh;
-//     z-index: 2;
-
-//     background: $bgColor;
-//     transform-origin: top;
-// }
 
 /* decoration tags finished*/
 
@@ -374,10 +204,6 @@ main {
         padding: 0;
     }
 
-    // .container {
-    //     padding: 0;
-    // }
-
     .logo-wrapper {
         width: 6rem;
     }
@@ -414,4 +240,3 @@ main {
 }
 
 @import "../../components/ui/Buttons/buttons.scss";
-

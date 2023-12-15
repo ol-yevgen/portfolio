@@ -1,8 +1,8 @@
 @import "./variables.scss";
+@import "./mixins.scss";
 
 .home {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: center;
 
     &-logo {
@@ -14,43 +14,19 @@
         max-height: 90px;
     }
 
-    &-text {
-        position: relative;
+    &-subtitle {
+        font-size: 2rem;
+        letter-spacing: 0.8rem;
+        color: $navLincColor;
+    }
 
+    &-text {
         font-weight: 800;
         font-size: 10.3rem;
         line-height: 9.3rem;
         letter-spacing: -0.3rem;
 
-        &::before {
-            content: "<h1>";
-            position: absolute;
-            top: -6rem;
-            left: -2rem;
-
-            font-family: var(--font-La-Belle-Aurore), cursive;
-            font-size: 18px;
-
-            color: $tagsColor;
-        }
-
-        &::after {
-            content: "</h1>";
-            position: absolute;
-            bottom: -7rem;
-            left: -2rem;
-
-            font-family: var(--font-La-Belle-Aurore), cursive;
-            font-size: 18px;
-
-            color: $tagsColor;
-        }
-    }
-
-    & > p {
-        font-size: 2rem;
-        letter-spacing: 0.8rem;
-        color: $navLincColor;
+        @include tags-decor('<h1>', '</h1>', -6rem, -7rem)
     }
 }
 
@@ -68,7 +44,7 @@
             line-height: 7.8rem;
         }
 
-        & > p {
+        &-subtitle {
             letter-spacing: 0.5rem;
         }
     }
@@ -88,7 +64,7 @@
             }
         }
 
-        & > p {
+        &-subtitle {
             font-size: 1.7rem;
             letter-spacing: 0.5rem;
         }
