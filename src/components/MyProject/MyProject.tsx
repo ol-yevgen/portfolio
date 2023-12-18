@@ -29,7 +29,7 @@ const MyProject = ({
     })
     
     return (
-        <li className="projects-item">
+        <div className="projects-item">
             {data &&
             <Image className="projects-item--img" src={data} width={40} height={40} alt={projectLabel} />}
             <div className="projects-item--description">
@@ -44,6 +44,7 @@ const MyProject = ({
                         className="social-link"
                         rel="noreferrer"
                         data-tooltip="Code"
+                        aria-label={`Link to GitHub of ${projectLabel} project`}
                     >
                         {gitHubIcon}
                     </a>
@@ -53,12 +54,13 @@ const MyProject = ({
                         className="social-link demo"
                         rel="noreferrer"
                         data-tooltip="Demo"
+                        aria-label={`Link to Demo of ${projectLabel} project`}
                     >
                         {linkIcon}
                     </a>
                 </div>
             </div>
-        </li>
+        </div>
     )
 }
 

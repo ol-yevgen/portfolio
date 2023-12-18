@@ -60,7 +60,7 @@ const MyProjects = () => {
                 />
             }
 
-            <ul className="projects-items">
+            <div className="projects-items">
                 {projectsPagination?.map(({ id, ...props }, index) => {
                     return <Fragment key={id}>
                         <MotionContainer initial={{ y: 20 }} delay={index} duration={1} >
@@ -69,7 +69,7 @@ const MyProjects = () => {
                     </Fragment>
 
                 })}
-            </ul >
+            </div >
             {(data &&
                 (projectsPagination.length > 5)) &&
                 (projectsPagination.length < (data?.totalProjects as number)) &&
