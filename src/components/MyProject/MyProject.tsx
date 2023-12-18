@@ -5,7 +5,6 @@ import { IProjectTypes } from '@/types/types';
 import Image from 'next/image';
 import { BASE_API } from '@/helpers/constants';
 import axios from 'axios';
-import { GetServerSideProps } from 'next';
 
 interface IProps extends IProjectTypes {
     isLoading: boolean
@@ -30,9 +29,9 @@ const MyProject = ({
     })
     
     return (
-        data &&
         <li className="projects-item">
-            <Image className="projects-item--img" src={data} width={40} height={40} alt={projectLabel} />
+            {data &&
+            <Image className="projects-item--img" src={data} width={40} height={40} alt={projectLabel} />}
             <div className="projects-item--description">
                 <h3 className="projects-item--title" aria-label={projectLabel}>
                     <LetteringText text={projectLabel} isLoaded={!imageLoading} />
