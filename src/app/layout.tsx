@@ -9,6 +9,7 @@ import { Analytics } from '@vercel/analytics/react';
 import Menu from '@/components/layouts/Menu/Menu'
 import type { Metadata } from 'next'
 import './styles/globals.scss'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 // import './styles/gpt.scss'
 
 export const metadata: Metadata = {
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
     }
 }
 
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string
+
 export default function RootLayout({
     children,
 }: {
@@ -27,6 +30,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${sofiaPro.className} ${laBelleAurore.variable}`}>
+                <GoogleAnalytics GA_TRACKING_ID={GA_MEASUREMENT_ID} />
                 <QueryClientProvider>
                     <BurgerProvider>
                         <div className="app">
