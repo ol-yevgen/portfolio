@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from '@/components/layouts/Header/Header'
 import Footer from '@/components/layouts/Footer/Footer'
 import Spinner from '@/components/ui/Spinner/Spinner'
+import { Analytics } from '@vercel/analytics/react';
 import Menu from '@/components/layouts/Menu/Menu'
 import type { Metadata } from 'next'
 import './styles/globals.scss'
@@ -37,6 +38,7 @@ export default function RootLayout({
                                     className="animation-container"
                                 >
                                     {children}
+                                    <Analytics />
                                 </main>
                                 <Footer />
                             </div>
