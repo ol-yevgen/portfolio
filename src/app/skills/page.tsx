@@ -40,7 +40,9 @@ const Skills = () => {
 
     return (
         <>
-            {!iconsLoading &&
+
+            {
+                !iconsLoading &&
                 <section className="container skills">
                     <h2
                         className="discription-title section-title"

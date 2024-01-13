@@ -21,10 +21,6 @@ export default function About() {
             return data as IAboutPageTypes
         },
     })
-    interface IProps {
-        data: IAboutCVResType
-        fileName: string
-    }
 
     const title = "About me"
 
